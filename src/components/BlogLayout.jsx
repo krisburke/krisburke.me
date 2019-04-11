@@ -1,19 +1,33 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Footer from './Footer';
+import Navbar from './Navbar';
+import styles from './BlogLayout.module.css';
+import SEO from './SEO';
+
 
 class BlogLayout extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <header>
-                        <h3>
-                            <Link to={'/'}>{this.props.title}</Link>
-                        </h3>
+                <SEO/>
+                <div className={styles.grid}>
+                    <header className={styles.header}>
+                        <Navbar/>
                     </header>
-                    {this.props.children}
+
+                    <aside className={styles.sidebarLeft}>
+                    </aside>
+
+                    <div className={styles.mainContent}>
+                            {this.props.children}
+                    </div>
+
+                    <aside className={styles.sidebarRight}>
+                    </aside>
+                    <Footer/>
                 </div>
             </div>
+
         );
     }
 }

@@ -2,10 +2,10 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
 
-import Bio from '../components/Bio';
-import HomeLayout from '../components/HomeLayout';
+import BlogLayout from '../components/BlogLayout';
 import SEO from '../components/SEO';
-import { formatPostDate, formatReadingTime } from '../utils/helpers';
+import { formatPostDate } from '../utils/helpers';
+import styles from './blog-post.module.css';
 
 class BlogPostTemplate extends React.Component {
     render() {
@@ -16,73 +16,30 @@ class BlogPostTemplate extends React.Component {
         let html = post.html;
 
         return (
-            <HomeLayout location={this.props.location} title={siteTitle}>
+            <BlogLayout location={this.props.location} title={siteTitle}>
                 <SEO
                     title={post.frontmatter.title}
                     description={post.frontmatter.spoiler}
                     slug={post.fields.slug}
                 />
-                <main>
-                    <article>
-                        <header>
-                            <h1>{post.frontmatter.title}</h1>
-                            <p>
+                <main className={styles.postMain}>
+                    <article >
+                        <header className={styles.postHeader}>
+                            <h1 className={styles.postTitle}>{post.frontmatter.title}</h1>
+                            <p className={styles.postDate}>
                                 {formatPostDate(post.frontmatter.date)}
-                                {` • ${formatReadingTime(post.timeToRead)}`}
+                                {` | ${post.timeToRead} min read`}
                             </p>
                         </header>
-                        <div dangerouslySetInnerHTML={{ __html: html }} />
-                        <footer>
-                            <p>
-                                {/*fixme add urls */}
-                                <a
-                                    href={'/discussUrl'}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Discuss on Twitter
-                                </a>
-                                {` • `}
-                                <a
-                                    href={'/editUrl'}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Edit on GitHub
-                                </a>
-                            </p>
-                        </footer>
+                        <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: html }} />
                     </article>
                 </main>
                 <aside>
                     <h3>
                         <Link to={'/'}>Home</Link>
                     </h3>
-                    <Bio />
-                    <nav>
-                        <ul>
-                            <li>
-                                {previous && (
-                                    <Link
-                                        to={previous.fields.slug}
-                                        rel="prev"
-                                        style={{ marginRight: 20 }}
-                                    >
-                                        ← {previous.frontmatter.title}
-                                    </Link>
-                                )}
-                            </li>
-                            <li>
-                                {next && (
-                                    <Link to={next.fields.slug} rel="next">
-                                        {next.frontmatter.title} →
-                                    </Link>
-                                )}
-                            </li>
-                        </ul>
-                    </nav>
                 </aside>
-            </HomeLayout>
+            </BlogLayout>
         );
     }
 }

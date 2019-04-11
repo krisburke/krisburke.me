@@ -1,37 +1,31 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import styles from './HomeLayout.module.css';
+import SEO from './SEO';
 
-
-class BlogLayout extends React.Component {
+class HomeLayout extends React.Component {
     render() {
         return (
-            <div className={styles.grid}>
-                <header className={styles.header}>
-                    <Navbar/>
-                </header>
+            <div>
+                <SEO />
+                <div className={styles.grid}>
+                    <header className={styles.header}>
+                        <Navbar />
+                    </header>
 
-                <aside className={styles.sidebarLeft}>
-                    Left Sidebar
-                </aside>
+                    <aside className={styles.sidebarLeft} />
 
-                <div className={styles.mainContent}>
-                    <h1>
-                        <Link to={'/'}>{this.props.title}</Link>
-                        {this.props.children}
-                    </h1>
+                    <div className={styles.mainContent}>
+                            {this.props.children}
+                    </div>
+
+                    <aside className={styles.sidebarRight} />
+                    <Footer />
                 </div>
-
-                <aside className={styles.sidebarRight}>
-                    Right Sidebar
-                </aside>
-
-                <Footer/>
             </div>
         );
     }
 }
 
-export default BlogLayout;
+export default HomeLayout;

@@ -14,12 +14,12 @@ export default () => (
                 </a>
             </li>
             <li className={styles.navItem}>
-                <a className={styles.navItemLink} href="#">
+                <a className={styles.navItemLink} href="/projects">
                     Projects
                 </a>
             </li>
             <li className={styles.navItem}>
-                <a className={styles.navItemLink} href="#">
+                <a className={styles.navItemLink} href="/about">
                     About
                 </a>
             </li>

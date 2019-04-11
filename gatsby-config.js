@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'Writing', // fixme
+        title: 'Distilled', // fixme
         author: 'Kris Burke',
         description: 'Personal blog by Kris Burke.',
         siteUrl: '',

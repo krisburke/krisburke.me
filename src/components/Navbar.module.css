@@ -1,3 +1,6 @@
+@value colors: "../common/colors.css";
+@value white, lightGrey from colors;
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -16,6 +19,7 @@
 .navLinks {
     display: flex;
     list-style: none;
+    margin-right: 25px;
 }
 
 .navItem {
@@ -25,9 +29,11 @@
     display: inline-block;
     padding: 10px 15px;
     text-decoration: none;
-    /*color: black;*/
+    color: white;
+    font-family: 'Antic', sans-serif;
+    font-size: 25px;
 }
 
 .navItemLink:hover {
-    /*color: somethingelese*/
+    color: lightGrey;
 }

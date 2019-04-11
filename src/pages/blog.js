@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
-import { formatPostDate, formatReadingTime } from '../utils/helpers';
-
-import Bio from '../components/Bio';
-import Footer from '../components/Footer';
-import HomeLayout from '../components/HomeLayout';
-import SEO from '../components/SEO';
+import { formatPostDate } from '../utils/helpers';
+import BlogLayout from '../components/BlogLayout';
+import styles from './blog.module.css';
 
 class BlogIndexPage extends React.Component {
     render() {
@@ -14,34 +11,30 @@ class BlogIndexPage extends React.Component {
         const posts = get(this, 'props.data.allMarkdownRemark.edges');
 
         return (
-            <HomeLayout location={this.props.location} title={siteTitle}>
-                <SEO />
-                <aside>
-                    <Bio />
-                </aside>
+            <BlogLayout location={this.props.location} title={siteTitle}>
+                <h1 className={styles.blogTitle}>Writing</h1>
                 <main>
                     {posts.map(({ node }) => {
                         const title =
                             get(node, 'frontmatter.title') || node.fields.slug;
                         return (
-                            <article key={node.fields.slug}>
+                            <article className={styles.post} key={node.fields.slug}>
                                 <header>
-                                    <h3>
+                                    <h3 className={styles.postTitleHeading}>
                                         <Link
+                                            className={styles.postTitleLink}
                                             to={node.fields.slug}
                                             rel="bookmark"
                                         >
                                             {title}
                                         </Link>
                                     </h3>
-                                    <small>
+                                    <small className={styles.postDate}>
                                         {formatPostDate(node.frontmatter.date)}
-                                        {` • ${formatReadingTime(
-                                            node.timeToRead
-                                        )}`}
+                                        {` | ${node.timeToRead} min read`}
                                     </small>
                                 </header>
-                                <p
+                                <p className={styles.spoiler}
                                     dangerouslySetInnerHTML={{
                                         __html: node.frontmatter.spoiler,
                                     }}
@@ -50,8 +43,7 @@ class BlogIndexPage extends React.Component {
                         );
                     })}
                 </main>
-                <Footer />
-            </HomeLayout>
+            </BlogLayout>
         );
     }
 }

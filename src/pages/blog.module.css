@@ -1,0 +1,30 @@
+.blogTitle {
+    margin: 8% 0;
+    font-family: 'Antic', sans-serif;
+    font-size: 2.25em;
+}
+
+.post {
+    margin: 12% 0;
+}
+
+.postTitleHeading {
+    font-family: 'Podkova', sans-serif;
+    font-size: 1.75em;
+    margin-bottom: 4px;
+}
+
+.postTitleLink {
+    text-decoration: none;
+    color: #374C69;
+}
+
+.postDate {
+    font-size: .9em;
+}
+
+.spoiler {
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
