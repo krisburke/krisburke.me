@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import Bio from '../components/Bio';
 import Footer from '../components/Footer';
-import Layout from '../components/Layout';
+import HomeLayout from '../components/HomeLayout';
 import SEO from '../components/SEO';
 
 class HomePage extends React.Component {
@@ -11,7 +11,7 @@ class HomePage extends React.Component {
         const siteTitle = get(this, 'props.data.site.siteMetadata.title');
 
         return (
-            <Layout location={this.props.location} title={siteTitle}>
+            <HomeLayout location={this.props.location} title={siteTitle}>
                 <SEO />
                 <aside>
                     <Bio />
@@ -19,8 +19,7 @@ class HomePage extends React.Component {
                 <main>
                     <h1>Hello from Home</h1>
                 </main>
-                <Footer />
-            </Layout>
+            </HomeLayout>
         );
     }
 }

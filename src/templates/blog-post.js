@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
 
 import Bio from '../components/Bio';
-import Layout from '../components/Layout';
+import HomeLayout from '../components/HomeLayout';
 import SEO from '../components/SEO';
 import { formatPostDate, formatReadingTime } from '../utils/helpers';
 
@@ -16,7 +16,7 @@ class BlogPostTemplate extends React.Component {
         let html = post.html;
 
         return (
-            <Layout location={this.props.location} title={siteTitle}>
+            <HomeLayout location={this.props.location} title={siteTitle}>
                 <SEO
                     title={post.frontmatter.title}
                     description={post.frontmatter.spoiler}
@@ -82,7 +82,7 @@ class BlogPostTemplate extends React.Component {
                         </ul>
                     </nav>
                 </aside>
-            </Layout>
+            </HomeLayout>
         );
     }
 }

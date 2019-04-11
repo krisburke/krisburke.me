@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logoImg {
+    width: 175px;
+    vertical-align: middle;
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+}
+
+.navItem {
+}
+
+.navItemLink {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    /*color: black;*/
+}
+
+.navItemLink:hover {
+    /*color: somethingelese*/
+}

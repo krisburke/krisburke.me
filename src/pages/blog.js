@@ -5,7 +5,7 @@ import { formatPostDate, formatReadingTime } from '../utils/helpers';
 
 import Bio from '../components/Bio';
 import Footer from '../components/Footer';
-import Layout from '../components/Layout';
+import HomeLayout from '../components/HomeLayout';
 import SEO from '../components/SEO';
 
 class BlogIndexPage extends React.Component {
@@ -14,7 +14,7 @@ class BlogIndexPage extends React.Component {
         const posts = get(this, 'props.data.allMarkdownRemark.edges');
 
         return (
-            <Layout location={this.props.location} title={siteTitle}>
+            <HomeLayout location={this.props.location} title={siteTitle}>
                 <SEO />
                 <aside>
                     <Bio />
@@ -51,7 +51,7 @@ class BlogIndexPage extends React.Component {
                     })}
                 </main>
                 <Footer />
-            </Layout>
+            </HomeLayout>
         );
     }
 }
