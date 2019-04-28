@@ -1,10 +1,10 @@
 import React from 'react';
-import Footer from './Footer';
-import Navbar from './Navbar';
-import styles from './HomeLayout.module.css';
-import SEO from './SEO';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
+import styles from './SiteLayout.module.css';
+import SEO from '../SEO';
 
-class HomeLayout extends React.Component {
+class SiteLayout extends React.Component {
     render() {
         return (
             <div>
@@ -28,4 +28,4 @@ class HomeLayout extends React.Component {
     }
 }
 
-export default HomeLayout;
+export default SiteLayout;

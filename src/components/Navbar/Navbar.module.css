@@ -1,4 +1,4 @@
-@value colors: "../common/colors.css";
+@value colors: "../../common/colors.css";
 @value white, nord1, nord4, nord9 from colors;
 
 .navbar {

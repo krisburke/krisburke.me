@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { formatPostDate } from '../utils/helpers';
-import BlogLayout from '../components/BlogLayout';
+import SiteLayout from '../components/SiteLayout/SiteLayout';
 import styles from './blog.module.css';
 
 class BlogIndexPage extends React.Component {
@@ -11,7 +11,7 @@ class BlogIndexPage extends React.Component {
         const posts = get(this, 'props.data.allMarkdownRemark.edges');
 
         return (
-            <BlogLayout location={this.props.location} title={siteTitle}>
+            <SiteLayout location={this.props.location} title={siteTitle}>
                 <h1 className={styles.blogTitle}>Writing</h1>
                 <main>
                     {posts.map(({ node }) => {
@@ -47,7 +47,7 @@ class BlogIndexPage extends React.Component {
                         );
                     })}
                 </main>
-            </BlogLayout>
+            </SiteLayout>
         );
     }
 }

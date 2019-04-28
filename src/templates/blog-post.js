@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
 
-import BlogLayout from '../components/BlogLayout';
+import SiteLayout from '../components/SiteLayout/SiteLayout';
 import SEO from '../components/SEO';
 import { formatPostDate } from '../utils/helpers';
 import styles from './blog-post.module.css';
@@ -16,7 +16,7 @@ class BlogPostTemplate extends React.Component {
         let html = post.html;
 
         return (
-            <BlogLayout location={this.props.location} title={siteTitle}>
+            <SiteLayout location={this.props.location} title={siteTitle}>
                 <SEO
                     title={post.frontmatter.title}
                     description={post.frontmatter.spoiler}
@@ -44,7 +44,7 @@ class BlogPostTemplate extends React.Component {
                         <Link to={'/'}>Home</Link>
                     </h3>
                 </aside>
-            </BlogLayout>
+            </SiteLayout>
         );
     }
 }
