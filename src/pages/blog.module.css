@@ -1,6 +1,6 @@
 .blogTitle {
     margin: 8% 0;
-    font-family: 'Antic', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 2.25em;
 }
 
@@ -16,15 +16,14 @@
 
 .postTitleLink {
     text-decoration: none;
-    color: #374C69;
+    color: #374c69;
 }
 
 .postDate {
-    font-size: .9em;
+    font-size: 0.9em;
 }
 
 .spoiler {
     font-size: 18px;
     line-height: 1.5em;
 }
-

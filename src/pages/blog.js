@@ -18,7 +18,10 @@ class BlogIndexPage extends React.Component {
                         const title =
                             get(node, 'frontmatter.title') || node.fields.slug;
                         return (
-                            <article className={styles.post} key={node.fields.slug}>
+                            <article
+                                className={styles.post}
+                                key={node.fields.slug}
+                            >
                                 <header>
                                     <h3 className={styles.postTitleHeading}>
                                         <Link
@@ -34,7 +37,8 @@ class BlogIndexPage extends React.Component {
                                         {` | ${node.timeToRead} min read`}
                                     </small>
                                 </header>
-                                <p className={styles.spoiler}
+                                <p
+                                    className={styles.spoiler}
                                     dangerouslySetInnerHTML={{
                                         __html: node.frontmatter.spoiler,
                                     }}

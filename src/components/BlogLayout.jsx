@@ -4,30 +4,26 @@ import Navbar from './Navbar';
 import styles from './BlogLayout.module.css';
 import SEO from './SEO';
 
-
 class BlogLayout extends React.Component {
     render() {
         return (
             <div>
-                <SEO/>
+                <SEO />
                 <div className={styles.grid}>
                     <header className={styles.header}>
-                        <Navbar/>
+                        <Navbar />
                     </header>
 
-                    <aside className={styles.sidebarLeft}>
-                    </aside>
+                    <aside className={styles.sidebarLeft} />
 
                     <div className={styles.mainContent}>
-                            {this.props.children}
+                        {this.props.children}
                     </div>
 
-                    <aside className={styles.sidebarRight}>
-                    </aside>
-                    <Footer/>
+                    <aside className={styles.sidebarRight} />
+                    <Footer />
                 </div>
             </div>
-
         );
     }
 }

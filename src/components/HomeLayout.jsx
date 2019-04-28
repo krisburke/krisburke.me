@@ -17,7 +17,7 @@ class HomeLayout extends React.Component {
                     <aside className={styles.sidebarLeft} />
 
                     <div className={styles.mainContent}>
-                            {this.props.children}
+                        {this.props.children}
                     </div>
 
                     <aside className={styles.sidebarRight} />

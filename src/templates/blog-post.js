@@ -23,15 +23,20 @@ class BlogPostTemplate extends React.Component {
                     slug={post.fields.slug}
                 />
                 <main className={styles.postMain}>
-                    <article >
+                    <article>
                         <header className={styles.postHeader}>
-                            <h1 className={styles.postTitle}>{post.frontmatter.title}</h1>
+                            <h1 className={styles.postTitle}>
+                                {post.frontmatter.title}
+                            </h1>
                             <p className={styles.postDate}>
                                 {formatPostDate(post.frontmatter.date)}
                                 {` | ${post.timeToRead} min read`}
                             </p>
                         </header>
-                        <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: html }} />
+                        <div
+                            className={styles.postContent}
+                            dangerouslySetInnerHTML={{ __html: html }}
+                        />
                     </article>
                 </main>
                 <aside>

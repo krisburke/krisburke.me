@@ -1,14 +1,21 @@
 @value colors: "../common/colors.css";
-@value white, lightGrey from colors;
+@value white, nord1, nord4, nord9 from colors;
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    height: 75px;
 }
 
 .logo {
     display: inline-block;
+    margin-left: 35px;
+    color: nord9;
+    font-family: 'Rubik Black', sans-serif;
+    font-size: 40px;
+    text-decoration: none;
 }
 
 .logoImg {
@@ -19,7 +26,7 @@
 .navLinks {
     display: flex;
     list-style: none;
-    margin-right: 25px;
+    margin-right: 70px;
 }
 
 .navItem {
@@ -27,13 +34,16 @@
 
 .navItemLink {
     display: inline-block;
-    padding: 10px 15px;
+    margin-left: 124px;
+    padding: 10px 0px;
+    color: nord1;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
     text-decoration: none;
-    color: white;
-    font-family: 'Antic', sans-serif;
-    font-size: 25px;
 }
 
 .navItemLink:hover {
-    color: lightGrey;
+    background-color: nord4;
+    border-radius: 25px;
 }

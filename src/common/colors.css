@@ -1,8 +1,21 @@
 @value white: #FFF;
-@value lightGrey: #DDD;
 
-@value lightShade: #F2EFF2;  /* white */
-@value lightAccent: #8F958F; /* grey green */
-@value mainColor: #71A5BC;   /* light bright blue  */
-@value darkAccent: #846F80;  /* dusty purple pink */
-@value darkShade: #374C69;   /* dark bright blue  */
+/*Using Nord for color scheme */
+/*Credit: Arctic Ice Studio <development@arcticicestudio.com>*/
+
+@value nord0: #2E3440;
+@value nord1: #3B4252;
+@value nord2: #434C5E;
+@value nord3: #4C566A;
+@value nord4: #D8DEE9;
+@value nord5: #E5E9F0;
+@value nord6: #ECEFF4;
+@value nord7:  #8FBCBB;
+@value nord8:  #88C0D0;
+@value nord9:  #81A1C1;
+@value nord10: #5E81AC;
+@value nord11: #BF616A;
+@value nord12: #D08770;
+@value nord13: #EBCB8B;
+@value nord14: #A3BE8C;
+@value nord15: #B48EAD;
