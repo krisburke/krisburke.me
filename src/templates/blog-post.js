@@ -6,6 +6,7 @@ import SiteLayout from '../components/SiteLayout/SiteLayout';
 import SEO from '../components/SEO';
 import { formatPostDate } from '../utils/helpers';
 import styles from './blog-post.module.css';
+import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
 
 class BlogPostTemplate extends React.Component {
     render() {
@@ -24,15 +25,11 @@ class BlogPostTemplate extends React.Component {
                 />
                 <main className={styles.postMain}>
                     <article>
-                        <header className={styles.postHeader}>
-                            <h1 className={styles.postTitle}>
-                                {post.frontmatter.title}
-                            </h1>
-                            <p className={styles.postDate}>
-                                {formatPostDate(post.frontmatter.date)}
-                                {` | ${post.timeToRead} min read`}
-                            </p>
-                        </header>
+                        <BlogPostHeading
+                            title={post.frontmatter.title}
+                            date={formatPostDate(post.frontmatter.date)}
+                            timeToRead={post.timeToRead}
+                        />
                         <div
                             className={styles.postContent}
                             dangerouslySetInnerHTML={{ __html: html }}

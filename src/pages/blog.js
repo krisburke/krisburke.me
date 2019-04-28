@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
-import { formatPostDate } from '../utils/helpers';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
-import styles from './blog.module.css';
+import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
+import { formatPostDate } from '../utils/helpers';
 
 class BlogIndexPage extends React.Component {
     render() {
@@ -12,40 +12,17 @@ class BlogIndexPage extends React.Component {
 
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
-                <h1 className={styles.blogTitle}>Writing</h1>
                 <main>
-                    {posts.map(({ node }) => {
-                        const title =
-                            get(node, 'frontmatter.title') || node.fields.slug;
-                        return (
-                            <article
-                                className={styles.post}
-                                key={node.fields.slug}
-                            >
-                                <header>
-                                    <h3 className={styles.postTitleHeading}>
-                                        <Link
-                                            className={styles.postTitleLink}
-                                            to={node.fields.slug}
-                                            rel="bookmark"
-                                        >
-                                            {title}
-                                        </Link>
-                                    </h3>
-                                    <small className={styles.postDate}>
-                                        {formatPostDate(node.frontmatter.date)}
-                                        {` | ${node.timeToRead} min read`}
-                                    </small>
-                                </header>
-                                <p
-                                    className={styles.spoiler}
-                                    dangerouslySetInnerHTML={{
-                                        __html: node.frontmatter.spoiler,
-                                    }}
-                                />
-                            </article>
-                        );
-                    })}
+                    {posts.map(({ node }) => (
+                        <article key={node.fields.slug}>
+                            <BlogPostHeading
+                                title={get(node, 'frontmatter.title')}
+                                date={formatPostDate(node.frontmatter.date)}
+                                timeToRead={node.timeToRead}
+                                slug={node.fields.slug}
+                            />
+                        </article>
+                    ))}
                 </main>
             </SiteLayout>
         );
