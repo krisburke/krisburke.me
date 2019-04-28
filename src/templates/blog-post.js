@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
-
 import SiteLayout from '../components/SiteLayout/SiteLayout';
 import SEO from '../components/SEO';
+import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
+import Card from '../components/Card/Card';
 import { formatPostDate } from '../utils/helpers';
 import styles from './blog-post.module.css';
-import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
 
 class BlogPostTemplate extends React.Component {
     render() {
@@ -30,10 +30,12 @@ class BlogPostTemplate extends React.Component {
                             date={formatPostDate(post.frontmatter.date)}
                             timeToRead={post.timeToRead}
                         />
-                        <div
-                            className={styles.postContent}
-                            dangerouslySetInnerHTML={{ __html: html }}
-                        />
+                        <Card>
+                            <div
+                                className={styles.postContent}
+                                dangerouslySetInnerHTML={{ __html: html }}
+                            />
+                        </Card>
                     </article>
                 </main>
                 <aside>

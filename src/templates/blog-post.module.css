@@ -1,7 +1,11 @@
+@value colors: "../common/colors.css";
+@value white from colors;
+
 .postMain {
 }
 
 .postContent {
     font-size: 18px;
     line-height: 1.5em;
+    padding: 5% 10%;
 }
