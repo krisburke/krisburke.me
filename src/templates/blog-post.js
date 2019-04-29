@@ -29,6 +29,7 @@ class BlogPostTemplate extends React.Component {
                             title={post.frontmatter.title}
                             date={formatPostDate(post.frontmatter.date)}
                             timeToRead={post.timeToRead}
+                            tags={post.frontmatter.tags}
                         />
                         <Card>
                             <div
@@ -66,6 +67,7 @@ export const pageQuery = graphql`
                 title
                 date(formatString: "MMMM DD, YYYY")
                 spoiler
+                tags
             }
             fields {
                 slug

@@ -20,6 +20,7 @@ class BlogIndexPage extends React.Component {
                                 date={formatPostDate(node.frontmatter.date)}
                                 timeToRead={node.timeToRead}
                                 slug={node.fields.slug}
+                                tags={node.frontmatter.tags}
                             />
                         </article>
                     ))}
@@ -50,6 +51,7 @@ export const pageQuery = graphql`
                         date(formatString: "MMMM DD, YYYY")
                         title
                         spoiler
+                        tags
                     }
                 }
             }

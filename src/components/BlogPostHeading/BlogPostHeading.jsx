@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Tag from '../Tag/Tag';
 import styles from './BlogPostHeading.module.css';
+import tagMap from '../../common/tagMap';
 
-export default function BlogPostHeading({ title, date, timeToRead, slug }) {
+export default function BlogPostHeading({
+    title,
+    date,
+    timeToRead,
+    slug,
+    tags,
+}) {
     const renderTitle = () => {
         return slug ? (
             <Link className={styles.titleLink} to={slug}>
@@ -22,6 +30,17 @@ export default function BlogPostHeading({ title, date, timeToRead, slug }) {
                     className={styles.timeToRead}
                 >{`${timeToRead} min read`}</span>
             </p>
+            <div className={styles.tags}>
+                {tags &&
+                    tags.map(tag => (
+                        <span className={styles.tag}>
+                            <Tag
+                                text={tagMap[tag].text}
+                                color={tagMap[tag].color}
+                            />
+                        </span>
+                    ))}
+            </div>
         </header>
     );
 }

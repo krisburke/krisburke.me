@@ -30,3 +30,11 @@
     font-size: 0.9em;
     margin-left: 8px;
 }
+
+.tags {
+    margin-top: 25px;
+}
+
+.tag {
+    margin-right: 15px;
+}

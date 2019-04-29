@@ -1,0 +1,22 @@
+@value colors: '../../common/colors.css';
+@value nord7, nord9 from colors;
+
+.tag {
+    font-family: 'Rubik Medium', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 7px 25px;
+}
+
+.lightBlue {
+    border-color: nord9;
+    color: nord9;
+}
+
+.green {
+    border-color: nord7;
+    color: nord7;
+}
