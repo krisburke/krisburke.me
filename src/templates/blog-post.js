@@ -41,7 +41,14 @@ class BlogPostTemplate extends React.Component {
                 </main>
                 <aside>
                     <h3>
-                        <Link to={'/'}>Home</Link>
+                        <div>
+                            <Link to={'/blog'}>{'<'} Back to Blog</Link>
+                        </div>
+                        <div>
+                            <a href="https://twitter.com/_krisburke">
+                                Discuss on Twitter
+                            </a>
+                        </div>
                     </h3>
                 </aside>
             </SiteLayout>

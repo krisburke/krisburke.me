@@ -1,4 +1,22 @@
+@value colors: '../../common/colors.css';
+@value white, nord9 from colors;
+
 .footer {
+    display: flex;
     grid-area: footer;
-    background: #eaeaea;
+    background-color: nord9;
+    width: 100%;
+    height: 125px;
+}
+
+.icons {
+    justify-content: center;
+}
+
+.icon {
+    width: 25px;
+}
+
+.svg {
+    fill: white;
 }

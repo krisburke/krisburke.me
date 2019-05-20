@@ -33,7 +33,7 @@ export default function BlogPostHeading({
             <div className={styles.tags}>
                 {tags &&
                     tags.map(tag => (
-                        <span className={styles.tag}>
+                        <span className={styles.tag} key={styles.tag}>
                             <Tag
                                 text={tagMap[tag].text}
                                 color={tagMap[tag].color}

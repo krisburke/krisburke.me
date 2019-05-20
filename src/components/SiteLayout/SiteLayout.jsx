@@ -21,6 +21,7 @@ class SiteLayout extends React.Component {
                     </div>
 
                     <aside className={styles.sidebarRight} />
+
                     <Footer />
                 </div>
             </div>
