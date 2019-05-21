@@ -1,0 +1,163 @@
+/* Prism Theme generated using http://k88hudson.github.io/syntax-highlighting-theme-generator/www/ */
+/* Theme color scheme inspired by Nord Theme https://github.com/arcticicestudio/nord */
+
+pre[class*='language-'],
+code[class*='language-'] {
+    color: #e5e9f0;
+    font-size: 13px;
+    text-shadow: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+pre[class*='language-']::selection,
+code[class*='language-']::selection {
+    text-shadow: none;
+    background: #5e81ac;
+}
+@media print {
+    pre[class*='language-'],
+    code[class*='language-'] {
+        text-shadow: none;
+    }
+}
+pre[class*='language-'] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    background: #2e3440;
+}
+:not(pre) > code[class*='language-'] {
+    padding: 0.1em 0.3em;
+    border-radius: 0.3em;
+    color: #434c5e;
+    background: #d8dee9;
+}
+
+.namespace {
+    opacity: 0.7;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #93a1a1;
+}
+.token.punctuation {
+    color: #999999;
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #a3be8c;
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #b48ead;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #88c0d0;
+    background: #2e3440;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #81a1c1;
+}
+.token.function {
+    color: #8fbcbb;
+}
+.token.regex,
+.token.important,
+.token.variable {
+    color: #8fbcbb;
+}
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+.token.entity {
+    cursor: help;
+}
+
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+    position: relative;
+}
+pre[class*='language-'] > code[class*='language-'] {
+    position: relative;
+    z-index: 1;
+}
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 1em;
+    background: #3b4252;
+    box-shadow: inset 5px 0 0 #4c566a;
+    z-index: 0;
+    pointer-events: none;
+    line-height: inherit;
+    white-space: pre;
+}
+
+/*
+ *  Below is for Prism custom theme line highlighting to work in Gatsby
+ *
+ */
+
+.gatsby-highlight {
+    background-color: #2e3440;
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+}
+
+.gatsby-highlight pre[class*='language-'] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+}
+
+.gatsby-highlight-code-line {
+    background-color: #3b4252;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1.35em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #4c566a;
+}
