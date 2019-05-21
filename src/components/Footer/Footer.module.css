@@ -7,16 +7,12 @@
     background-color: nord9;
     width: 100%;
     height: 125px;
-}
-
-.icons {
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.icon {
-    width: 25px;
-}
-
-.svg {
-    fill: white;
+.copyright {
+    margin: 5px;
+    font-size: 0.9em;
 }

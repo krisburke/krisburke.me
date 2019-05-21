@@ -8,6 +8,8 @@ import Card from '../components/Card/Card';
 import { formatPostDate } from '../utils/helpers';
 import styles from './blog-post.module.css';
 
+// TODO: add twitter link to blog posts (uncomment)
+
 class BlogPostTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark;
@@ -39,16 +41,11 @@ class BlogPostTemplate extends React.Component {
                         </Card>
                     </article>
                 </main>
-                <aside>
-                    <h3>
-                        <div>
-                            <Link to={'/blog'}>{'<'} Back to Blog</Link>
-                        </div>
-                        <div>
-                            <a href="https://twitter.com/_krisburke">
-                                Discuss on Twitter
-                            </a>
-                        </div>
+                <aside className={styles.postAside}>
+                    <h3 className={styles.twitterLink}>
+                        <a href="https://twitter.com/_krisburke">
+                            {/*Discuss on Twitter*/}{' '}
+                        </a>
                     </h3>
                 </aside>
             </SiteLayout>

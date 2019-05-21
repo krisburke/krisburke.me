@@ -5,7 +5,29 @@
 }
 
 .postContent {
+    background-color: white;
     font-size: 18px;
     line-height: 1.5em;
     padding: 5% 15%;
+}
+
+.postAside {
+    display: flex;
+}
+
+.postContent a,
+.postAside a {
+    color: #88c0d0; /* Nord 8 */
+    text-decoration: none;
+}
+
+.postContent a:hover,
+.postAside a:hover {
+    color: #88c0d0; /* Nord 8 */
+    text-decoration: underline;
+}
+
+.twitterLink {
+    display: inline-block;
+    margin: 1.5em auto 0.75em auto;
 }
