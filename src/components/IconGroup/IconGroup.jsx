@@ -5,6 +5,7 @@ import rssIcon from '../../assets/simple-icons/rss.svg';
 import twitterIcon from '../../assets/simple-icons/twitter.svg';
 import githubIcon from '../../assets/simple-icons/github.svg';
 import stackOverflowIcon from '../../assets/simple-icons/stackoverflow.svg';
+import envelopeIcon from '../../assets/simple-icons/envelope-white.svg';
 
 const IconGroup = () => {
     return (
@@ -24,6 +25,11 @@ const IconGroup = () => {
                 href="https://stackoverflow.com/users/5171478/kris-burke"
                 alt="Stack Overflow Icon"
                 src={stackOverflowIcon}
+            />
+            <Icon
+                href="mailto:kris.burke611@gmail.com"
+                alt="Email Icon"
+                src={envelopeIcon}
             />
         </div>
     );
