@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Tag from '../Tag/Tag';
 import styles from './BlogPostHeading.module.css';
-import tagMap from '../../common/tagMap';
+import tagMap from '../Tag/tagMap';
 
 export default function BlogPostHeading({
     title,

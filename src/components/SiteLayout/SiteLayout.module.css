@@ -1,33 +1,14 @@
 @value colors: "../../common/colors.css";
 @value white, nord9 from colors;
 
-.grid {
-    display: grid;
-    grid-template-areas:
-        'header header header'
-        'left-sidebar content right-sidebar'
-        'footer footer footer';
-    grid-template-columns: 300px 1fr 300px;
-    grid-template-rows: 75px 1fr 125px;
-    grid-gap: 10px;
-    height: 100vh;
-}
-
 .header {
     grid-area: header;
     background-color: white;
 }
 
 .mainContent {
-    grid-area: content;
-}
-
-.sidebarLeft {
-    grid-area: left-sidebar;
-    margin-left: 0.5rem;
-}
-
-.sidebarRight {
-    grid-area: right-sidebar;
-    margin-right: 0.5rem;
+    max-width: 45rem;
+    padding: 1.5rem;
+    margin: auto;
+    min-height: calc(100vh - 120px);
 }
