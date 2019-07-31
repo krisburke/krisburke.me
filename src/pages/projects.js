@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
+import { projects } from '../components/Project/projects';
+import ProjectListItem from '../components/Project/ProjectListItem';
 
 class ProjectPage extends React.Component {
     render() {
@@ -10,7 +12,9 @@ class ProjectPage extends React.Component {
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
                 <main>
-                    <h1>Hello from Projects</h1>
+                    {projects.map(project => (
+                        <ProjectListItem project={project} />
+                    ))}
                 </main>
             </SiteLayout>
         );
