@@ -9,7 +9,7 @@ export default () => (
         <ul className={styles.navLinks}>
             <li className={styles.navItem}>
                 <a className={styles.navItemLink} href="/blog">
-                    BLOG
+                    WRITING
                 </a>
             </li>
             <li className={styles.navItem}>

@@ -1,0 +1,26 @@
+@value colors: '../../common/colors.css';
+@value nord2, nord3, nord4 from colors;
+
+.button {
+    font-family: 'Rubik Medium', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    padding: 7px 25px;
+    border-width: 2px;
+    background-color: nord4;
+    margin-right: 15px;
+}
+
+.button:hover {
+    border: solid 2px nord2;
+}
+
+.link {
+    text-decoration: none;
+    color: nord2;
+}
+
+.darkGrey {
+    color: nord2;
+}

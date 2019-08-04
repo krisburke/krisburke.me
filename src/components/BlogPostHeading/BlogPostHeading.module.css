@@ -4,12 +4,16 @@
 .header {
     font-family: 'Rubik', sans-serif;
     color: nord2;
-    margin: 7% 0;
+    margin: 5% 0;
+}
+
+.linkBlock {
+    cursor: pointer;
 }
 
 .title {
-    font-size: 2.25em;
-    margin-bottom: 10px;
+    font-size: 1.75em;
+    margin-bottom: 0;
 }
 
 .titleLink {
@@ -19,15 +23,16 @@
 
 .subtitle {
     letter-spacing: 1px;
+    margin: 0.5em 0;
 }
 
 .date {
-    font-size: 1.1em;
+    font-size: 0.9em;
     margin-right: 8px;
 }
 
 .timeToRead {
-    font-size: 0.9em;
+    font-size: 0.75em;
     margin-left: 8px;
 }
 
