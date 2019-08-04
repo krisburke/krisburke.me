@@ -6,13 +6,14 @@
     font-size: 14px;
     letter-spacing: 1px;
     border-radius: 25px;
-    border-width: 2px;
     padding: 7px 25px;
+    border-width: 2px;
     background-color: nord4;
-    box-shadow: 0 2px nord3;
+    margin-right: 15px;
 }
 
 .button:hover {
+    border: solid 2px nord2;
 }
 
 .link {

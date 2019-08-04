@@ -7,9 +7,13 @@
     margin: 5% 0;
 }
 
+.linkBlock {
+    cursor: pointer;
+}
+
 .title {
     font-size: 1.75em;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .titleLink {

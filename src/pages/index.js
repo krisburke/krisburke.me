@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
+import Bio from '../components/Bio/Bio';
 
 class HomePage extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class HomePage extends React.Component {
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
                 <main>
-                    <h1>Hello from Home</h1>
+                    <p />
                 </main>
             </SiteLayout>
         );

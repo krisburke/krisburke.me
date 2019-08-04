@@ -1,18 +1,15 @@
 import React from 'react';
-import Tag from '../Tag/Tag';
+import styles from './ProjectListItem.module.css';
 import RoundLinkButton from '../Button/RoundLinkButton';
 
 export default ({ project }) => {
     const { title, description, sourceUrl, hostedUrl, tech } = project;
 
     return (
-        <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <p>{tech.join(', ')}</p>
-            {hostedUrl && (
-                <RoundLinkButton text="View" color="darkGrey" url={hostedUrl} />
-            )}
+        <header className={styles.header}>
+            <h1 className={styles.title}>{title}</h1>
+            <p className={styles.description}>{description}</p>
+            {/*<p>{tech.join(', ')}</p>*/}
             {sourceUrl && (
                 <RoundLinkButton
                     text="View Source"
@@ -20,6 +17,9 @@ export default ({ project }) => {
                     url={sourceUrl}
                 />
             )}
-        </div>
+            {hostedUrl && (
+                <RoundLinkButton text="View" color="darkGrey" url={hostedUrl} />
+            )}
+        </header>
     );
 };
