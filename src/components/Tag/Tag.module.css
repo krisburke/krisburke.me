@@ -1,14 +1,20 @@
 @value colors: '../../common/colors.css';
-@value nord2, nord7, nord9, nord13 from colors;
+@value nord2, nord4, nord7, nord9, nord13 from colors;
 
 .tag {
     font-family: 'Rubik Medium', sans-serif;
+    display: inline-block;
     font-size: 14px;
     letter-spacing: 1px;
     border-radius: 25px;
     border-style: solid;
     border-width: 2px;
     padding: 7px 25px;
+}
+
+.inactive {
+    border-color: nord4;
+    color: nord4;
 }
 
 .lightBlue {

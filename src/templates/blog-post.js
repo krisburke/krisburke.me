@@ -5,18 +5,18 @@ import SiteLayout from '../components/SiteLayout/SiteLayout';
 import SEO from '../components/SEO';
 import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
 import Card from '../components/Card/Card';
-import { formatPostDate } from '../utils/helpers';
 import styles from './blog-post.module.css';
 
 // TODO: add twitter link to blog posts (uncomment)
 
 class BlogPostTemplate extends React.Component {
     render() {
-        const post = this.props.data.markdownRemark;
-        const siteTitle = get(this.props, 'data.site.siteMetadata.title');
-        let { previous, next, slug } = this.props.pageContext;
+        const post = get(this, 'props.data.markdownRemark');
+        const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+        let { previous, next, slug } = this.props.pageContext; // TODO
 
         let html = post.html;
+        console.log('post in blog post', post);
 
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
@@ -28,10 +28,8 @@ class BlogPostTemplate extends React.Component {
                 <main className={styles.postMain}>
                     <article>
                         <BlogPostHeading
-                            title={post.frontmatter.title}
-                            date={formatPostDate(post.frontmatter.date)}
-                            timeToRead={post.timeToRead}
-                            tags={post.frontmatter.tags}
+                            post={post}
+                            tags={post.frontmatter.tags} // FIXME
                         />
                         <Card>
                             <div

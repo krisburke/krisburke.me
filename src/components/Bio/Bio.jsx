@@ -1,9 +1,11 @@
 import React from 'react';
+import styles from './Bio.module.css';
 
-export default () => {
+export default ({ bio }) => {
     return (
         <div>
-            <p />
+            <h1>Hi, I'm Kris</h1>
+            <p>{bio}</p>
         </div>
     );
 };
