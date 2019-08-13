@@ -4,7 +4,8 @@ import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
 import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
 import { formatPostDate } from '../utils/helpers';
-import BlogPostTagSection from '../components/BlogPostTagSection/BlogPostTagSection';
+import BlogPostFilterSection from '../components/BlogPostFilterSection/BlogPostFilterSection';
+import Card from '../components/Card/Card';
 
 class BlogIndexPage extends React.Component {
     constructor(props) {
@@ -108,25 +109,18 @@ class BlogIndexPage extends React.Component {
     render() {
         const { filteredPosts, tags, currentTags, searchTerm } = this.state;
         const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+        const postCount = (filteredPosts && filteredPosts.length) || 0;
 
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
-                <h2>Filter Articles</h2>
-                <BlogPostTagSection
+                <BlogPostFilterSection
                     tags={tags}
                     currentTags={currentTags}
                     handleUpdateTags={this.updateTags}
+                    searchTerm={searchTerm}
+                    handleUpdateSearchTerm={this.updateSearchTerm}
+                    postCount={postCount}
                 />
-                <div className="search-container">
-                    <input
-                        className="search"
-                        type="text"
-                        name="searchTerm"
-                        value={searchTerm}
-                        placeholder="Type here to filter posts..."
-                        onChange={this.updateSearchTerm}
-                    />
-                </div>
                 <main>
                     {filteredPosts.map(({ node }) => (
                         <article key={node.fields.slug}>

@@ -3,6 +3,7 @@
 
 .tag {
     font-family: 'Rubik Medium', sans-serif;
+    display: inline-block;
     font-size: 14px;
     letter-spacing: 1px;
     border-radius: 25px;
