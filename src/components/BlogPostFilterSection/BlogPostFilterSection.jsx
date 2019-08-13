@@ -3,6 +3,8 @@ import styles from './BlogPostFilterSection.module.css';
 import Tag from '../Tag/Tag';
 import Card from '../Card/Card';
 
+// TODO: make responsive on mobile
+
 export default function({
     tags,
     currentTags,
@@ -11,6 +13,7 @@ export default function({
     handleUpdateSearchTerm,
     postCount,
 }) {
+    // FIXME: this card should be styled to match the card behind blog posts
     return (
         <div className={styles.container}>
             <Card>

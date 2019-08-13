@@ -7,6 +7,7 @@ module.exports = {
         social: {
             twitter: '@_krisburke',
         },
+        bio: "I'm a software developer specializing in modern JavaScript.",
     },
     pathPrefix: '/',
     plugins: [

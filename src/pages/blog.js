@@ -3,14 +3,14 @@ import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
 import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
-import { formatPostDate } from '../utils/helpers';
 import BlogPostFilterSection from '../components/BlogPostFilterSection/BlogPostFilterSection';
-import Card from '../components/Card/Card';
 
 class BlogIndexPage extends React.Component {
     constructor(props) {
         super(props);
 
+        // FIXME, tags need to be available to all places BlogPostHeading is
+        //  rendered, not just in blog template
         this.state = {
             searchTerm: '',
             tags: [
@@ -35,12 +35,12 @@ class BlogIndexPage extends React.Component {
         this.setState({ currentTags: this.state.tags });
     }
 
-    getTagIdsFromPost(post) {
-        return get(post, 'node.frontmatter.tags');
-    }
-
     getPostTitleFromPost(post) {
         return get(post, 'node.frontmatter.title');
+    }
+
+    getTagIdsFromPost(post) {
+        return get(post, 'node.frontmatter.tags');
     }
 
     isTagIdInTagList(tagId, tagList) {
@@ -122,14 +122,11 @@ class BlogIndexPage extends React.Component {
                     postCount={postCount}
                 />
                 <main>
-                    {filteredPosts.map(({ node }) => (
-                        <article key={node.fields.slug}>
+                    {filteredPosts.map(post => (
+                        <article key={get(post, 'node.fields.slug')}>
                             <BlogPostHeading
-                                title={this.getPostTitleFromPost({ node })}
-                                date={formatPostDate(node.frontmatter.date)}
-                                timeToRead={node.timeToRead}
-                                slug={node.fields.slug}
-                                postTags={this.getTagIdsFromPost({ node }).map(
+                                post={post.node}
+                                postTags={this.getTagIdsFromPost(post).map(
                                     tagId => this.getTagByTagId(tagId)
                                 )}
                             />
