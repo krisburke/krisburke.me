@@ -2,14 +2,13 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Tag from '../Tag/Tag';
 import styles from './BlogPostHeading.module.css';
-import tagMap from '../Tag/tagMap';
 
 export default function BlogPostHeading({
     title,
     date,
     timeToRead,
     slug,
-    tags,
+    postTags,
 }) {
     const renderTitle = () => {
         return slug ? (
@@ -40,15 +39,14 @@ export default function BlogPostHeading({
                 </p>
             </div>
             <div className={styles.tags}>
-                {tags &&
-                    tags.map(tag => (
-                        <span className={styles.tag} key={styles.tag}>
-                            <Tag
-                                text={tagMap[tag].text}
-                                color={tagMap[tag].color}
-                            />
-                        </span>
-                    ))}
+                {postTags &&
+                    postTags.map(tag => {
+                        return (
+                            <span className={styles.tag} key={tag.id}>
+                                <Tag text={tag.text} color={tag.color} />
+                            </span>
+                        );
+                    })}
             </div>
         </header>
     );

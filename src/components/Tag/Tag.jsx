@@ -1,10 +1,19 @@
 import React from 'react';
 import styles from './Tag.module.css';
 
-export default function Tag({ text, color }) {
+export default function Tag({ text, color, isInactive }) {
+    if (!text) {
+        return <div />;
+    }
+
     return (
-        <span className={`${styles.tag} ${styles[color]}`}>
-            {text.toUpperCase()}
+        <span
+            className={`${isInactive ? styles.inactive : styles[color]} ${
+                styles.tag
+            }
+            `}
+        >
+            {text && text.toUpperCase()}
         </span>
     );
 }
