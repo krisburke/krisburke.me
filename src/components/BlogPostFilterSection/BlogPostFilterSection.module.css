@@ -1,3 +1,6 @@
+@value typography: '../../common/styles/typography.css';
+@value pageHeading from typography;
+
 .container {
     margin-top: 35px;
 }
@@ -7,6 +10,7 @@
 }
 
 .heading {
+    composes: pageHeading;
     margin: 10px 0;
 }
 

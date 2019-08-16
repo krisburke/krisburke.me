@@ -1,0 +1,13 @@
+.bio {
+    margin: 3rem 0;
+}
+
+.greeting {
+    margin: 1.5rem 0;
+    font-size: 4rem;
+}
+
+.description {
+    font-size: 1.3rem;
+    max-width: 500px;
+}

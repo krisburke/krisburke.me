@@ -1,5 +1,7 @@
-@value colors: "../../common/colors.css";
+@value colors: "../../common/styles/colors.css";
+@value typography: "../../common/styles/typography.css";
 @value nord2 from colors;
+@value listItemTitle, listItemTitleLink, listItemSubtitle from typography;
 
 .header {
     font-family: 'Rubik', sans-serif;
@@ -12,17 +14,16 @@
 }
 
 .title {
-    font-size: 1.75em;
+    composes: listItemTitle;
     margin-bottom: 0;
 }
 
 .titleLink {
-    text-decoration: none;
-    color: nord2;
+    composes: listItemTitleLink;
 }
 
 .subtitle {
-    letter-spacing: 1px;
+    composes: listItemSubtitle;
     margin: 0.5em 0;
 }
 

@@ -1,4 +1,4 @@
-@value colors: '../../common/colors.css';
+@value colors: '../../common/styles/colors.css';
 @value nord2, nord4, nord7, nord9, nord13 from colors;
 
 .tag {

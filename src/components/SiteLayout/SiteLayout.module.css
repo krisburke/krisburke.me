@@ -1,4 +1,4 @@
-@value colors: "../../common/colors.css";
+@value colors: "../../common/styles/colors.css";
 @value white, nord9 from colors;
 
 .header {
