@@ -1,13 +1,16 @@
+@value typography: '../../common/styles/typography.css';
+@value listItemTitle, listItemSubtitle from typography;
+
 .header {
     margin: 5% 0;
 }
 
 .title {
-    font-size: 1.75em;
+    composes: listItemTitle;
     margin: 0;
 }
 
 .description {
+    composes: listItemSubtitle;
     margin: 8px 0 25px 0;
-    letter-spacing: 1px;
 }

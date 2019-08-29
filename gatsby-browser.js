@@ -1,4 +1,4 @@
-import './src/common/global.css';
+import './src/common/styles/global.css';
 
 // Code highlighting theme
-import './src/common/prism-theme.css';
+import './src/common/styles/prism-theme.css';

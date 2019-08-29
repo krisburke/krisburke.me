@@ -3,9 +3,9 @@ import styles from './Bio.module.css';
 
 export default ({ bio }) => {
     return (
-        <div>
-            <h1>Hi, I'm Kris</h1>
-            <p>{bio}</p>
+        <div className={styles.bio}>
+            <h1 className={styles.greeting}>Hi, I'm Kris.</h1>
+            <p className={styles.description}>{bio}</p>
         </div>
     );
 };

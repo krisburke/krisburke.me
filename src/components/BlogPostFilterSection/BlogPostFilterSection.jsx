@@ -18,7 +18,7 @@ export default function({
         <div className={styles.container}>
             <Card>
                 <div className={styles.inner}>
-                    <h2 className={styles.heading}>Filter Articles</h2>
+                    <h1 className={styles.heading}>WRITING</h1>
                     <div className={styles.tagSection}>
                         {tags.map(tag => {
                             const isActive = currentTags

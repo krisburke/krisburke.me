@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './LatestBlogPosts.module.css';
 import BlogPostHeading from '../BlogPostHeading/BlogPostHeading';
+import typographyStyles from '../../common/styles/typography.css';
 
 export default function({ posts }) {
     return (
         <div>
-            <h2>Latest Posts</h2>
+            <h1 className={typographyStyles.pageHeading}>LATEST POSTS</h1>
             <div>
                 {posts.map(post => (
                     <BlogPostHeading post={post.node} postTags={[]} />

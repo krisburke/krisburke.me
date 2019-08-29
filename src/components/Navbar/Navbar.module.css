@@ -1,5 +1,7 @@
-@value colors: "../../common/colors.css";
-@value white, nord1, nord4, nord9 from colors;
+@value colors: "../../common/styles/colors.css";
+@value typography: '../../common/styles/typography.css';
+@value white, nord4 from colors;
+@value siteLogo, navItem from typography;
 
 .navbar {
     display: flex;
@@ -9,12 +11,8 @@
 }
 
 .logo {
-    display: inline-block;
+    composes: siteLogo;
     margin-left: 35px;
-    color: nord9;
-    font-family: 'Rubik Black', sans-serif;
-    font-size: 30px;
-    text-decoration: none;
 }
 
 .logoImg {
@@ -28,18 +26,10 @@
     margin-right: 30px;
 }
 
-.navItem {
-}
-
 .navItemLink {
-    display: inline-block;
+    composes: navItem;
     margin-left: 20px;
     padding: 10px 15px;
-    color: nord1;
-    font-family: 'Rubik', sans-serif;
-    font-size: 18px;
-    letter-spacing: 2px;
-    text-decoration: none;
 }
 
 .active {
