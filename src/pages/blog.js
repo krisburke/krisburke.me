@@ -40,7 +40,7 @@ class BlogIndexPage extends React.Component {
     }
 
     getTagIdsFromPost(post) {
-        return get(post, 'node.frontmatter.tags');
+        return get(post, 'node.frontmatter.tags') || [];
     }
 
     isTagIdInTagList(tagId, tagList) {
