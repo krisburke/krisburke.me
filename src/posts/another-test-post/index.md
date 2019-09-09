@@ -1,6 +1,7 @@
 ---
 title: Another Test Post
 date: '2019-09-07'
+spoiler: ''
 tags: []
 ---
 

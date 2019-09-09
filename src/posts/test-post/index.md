@@ -1,6 +1,7 @@
 ---
 title: Test Post
 date: '2019-03-17'
+spoiler: ''
 tags: ['javascript']
 ---
 
