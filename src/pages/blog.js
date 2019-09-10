@@ -4,40 +4,13 @@ import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
 import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
 import typographyStyles from '../common/styles/typography.css';
+import { withTags } from '../components/Tag/withTags';
 
 class BlogIndexPage extends React.Component {
-    constructor(props) {
-        super(props);
-
-        // FIXME, tags need to be available to all places BlogPostHeading is
-        //  rendered, not just in blog template
-        this.state = {
-            tags: [
-                { text: 'React', color: 'lightBlue', id: 'react' },
-                { text: 'Node.js', color: 'green', id: 'reactRouter' },
-                { text: 'JavaScript', color: 'yellow', id: 'javascript' },
-                { id: 'default', color: 'darkGrey' },
-            ],
-        };
-
-        this.getTagByTagId = this.getTagByTagId.bind(this);
-    }
-
-    componentDidMount() {
-        this.setState({ currentTags: this.state.tags });
-    }
-
-    getTagIdsFromPost(post) {
-        return get(post, 'node.frontmatter.tags') || [];
-    }
-
-    getTagByTagId(tagId) {
-        return this.state.tags.find(tag => tag.id === tagId);
-    }
-
     render() {
         const posts = get(this, 'props.data.allMarkdownRemark.edges') || [];
         const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+        const BlogPostHeadingWithTags = withTags(BlogPostHeading);
 
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
@@ -45,11 +18,11 @@ class BlogIndexPage extends React.Component {
                     <h1 className={typographyStyles.pageHeading}>WRITING</h1>
                     {posts.map(post => (
                         <article key={get(post, 'node.fields.slug')}>
-                            <BlogPostHeading
+                            <BlogPostHeadingWithTags
                                 post={post.node}
-                                postTags={this.getTagIdsFromPost(post).map(
-                                    tagId => this.getTagByTagId(tagId)
-                                )}
+                                postTags={
+                                    get(post, 'node.frontmatter.tags') || []
+                                }
                             />
                         </article>
                     ))}

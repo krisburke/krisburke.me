@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { formatPostDate } from '../../utils/helpers';
 import get from 'lodash/get';
-import Tag from '../Tag/Tag';
 import styles from './BlogPostHeading.module.css';
 import * as PropTypes from 'prop-types';
 
@@ -24,8 +23,7 @@ export default class BlogPostHeading extends Component {
     }
 
     render() {
-        const { post, postTags } = this.props;
-        console.log('post in blog post heading', post);
+        const { post } = this.props;
         const title = get(post, 'frontmatter.title');
         const slug = get(post, 'fields.slug');
         const date = formatPostDate(get(post, 'frontmatter.date'));
@@ -51,16 +49,7 @@ export default class BlogPostHeading extends Component {
                         >{`${timeToRead} min read`}</span>
                     </p>
                 </div>
-                <div className={styles.tags}>
-                    {postTags &&
-                        postTags.map(tag => {
-                            return (
-                                <span className={styles.tag} key={tag.id}>
-                                    <Tag text={tag.text} color={tag.color} />
-                                </span>
-                            );
-                        })}
-                </div>
+                {this.props.children}
             </header>
         );
     }
