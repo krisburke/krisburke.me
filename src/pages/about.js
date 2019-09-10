@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
+import typographyStyles from '../common/styles/typography.css';
 
 class AboutPage extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class AboutPage extends React.Component {
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
                 <main>
-                    <h1>Hello from About</h1>
+                    <h1 className={typographyStyles.pageHeading}>ABOUT</h1>
                 </main>
             </SiteLayout>
         );

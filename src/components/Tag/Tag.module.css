@@ -31,3 +31,11 @@
     border-color: nord13;
     color: nord13;
 }
+
+.withTagsContainer {
+    margin-top: 10px;
+}
+
+.withTagsItem {
+    margin-right: 15px;
+}

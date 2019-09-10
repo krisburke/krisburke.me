@@ -15,7 +15,13 @@ class ProjectPage extends React.Component {
                 <h1 className={typographyStyles.pageHeading}>PROJECTS</h1>
                 <main>
                     {projects.map(project => (
-                        <ProjectListItem project={project} />
+                        <ProjectListItem
+                            project={project}
+                            key={project.title
+                                .toLowerCase()
+                                .split(' ')
+                                .join('-')}
+                        />
                     ))}
                 </main>
             </SiteLayout>
