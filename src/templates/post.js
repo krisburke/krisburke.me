@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
 import SEO from '../components/SEO';
 import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
 import Card from '../components/Card/Card';
-import styles from './blog-post.module.css';
-
-// TODO: add twitter link to blog posts (uncomment)
+import styles from './post.module.css';
 
 class BlogPostTemplate extends React.Component {
     render() {
@@ -29,7 +27,7 @@ class BlogPostTemplate extends React.Component {
                     <article>
                         <BlogPostHeading
                             post={post}
-                            tags={post.frontmatter.tags} // FIXME
+                            tags={post.frontmatter.tags}
                         />
                         <Card>
                             <div
@@ -39,13 +37,6 @@ class BlogPostTemplate extends React.Component {
                         </Card>
                     </article>
                 </main>
-                <aside className={styles.postAside}>
-                    <h3 className={styles.twitterLink}>
-                        <a href="https://twitter.com/_krisburke">
-                            {/*Discuss on Twitter*/}{' '}
-                        </a>
-                    </h3>
-                </aside>
             </SiteLayout>
         );
     }

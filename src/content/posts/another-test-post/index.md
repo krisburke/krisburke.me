@@ -2,7 +2,7 @@
 title: Another Test Post
 date: '2019-09-07'
 spoiler: ''
-tags: []
+tags: ['node']
 ---
 
 # Autolyci eminus retenta

@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
 import BlogPostHeading from '../components/BlogPostHeading/BlogPostHeading';
-import typographyStyles from '../common/styles/typography.css';
 import { withTags } from '../components/Tag/withTags';
 
 class BlogIndexPage extends React.Component {
@@ -15,7 +14,7 @@ class BlogIndexPage extends React.Component {
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
                 <main>
-                    <h1 className={typographyStyles.pageHeading}>WRITING</h1>
+                    <h1 className="pageHeading">WRITING</h1>
                     {posts.map(post => (
                         <article key={get(post, 'node.fields.slug')}>
                             <BlogPostHeadingWithTags

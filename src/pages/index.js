@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     }
 
     getLatestPosts() {
-        const numberOfPosts = 2;
+        const numberOfPosts = 3;
         const allPosts = get(this, 'props.data.allMarkdownRemark.edges') || [];
         return allPosts.slice(0, numberOfPosts);
     }

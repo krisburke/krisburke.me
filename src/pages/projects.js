@@ -2,9 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import SiteLayout from '../components/SiteLayout/SiteLayout';
-import { projects } from '../components/Project/projects';
+import { projects } from '../data/projects';
 import ProjectListItem from '../components/Project/ProjectListItem';
-import typographyStyles from '../common/styles/typography.css';
 
 class ProjectPage extends React.Component {
     render() {
@@ -12,7 +11,7 @@ class ProjectPage extends React.Component {
 
         return (
             <SiteLayout location={this.props.location} title={siteTitle}>
-                <h1 className={typographyStyles.pageHeading}>PROJECTS</h1>
+                <h1 className="pageHeading">PROJECTS</h1>
                 <main>
                     {projects.map(project => (
                         <ProjectListItem
