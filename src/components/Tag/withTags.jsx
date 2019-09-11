@@ -1,6 +1,7 @@
+import React from 'react';
 import styles from './Tag.module.css';
 import Tag from './Tag';
-import React from 'react';
+import { tags } from '../../data/tags';
 
 export function withTags(WrappedComponent) {
     return class extends React.Component {
@@ -8,12 +9,7 @@ export function withTags(WrappedComponent) {
             super(props);
 
             this.state = {
-                tags: [
-                    { text: 'React', color: 'lightBlue', id: 'react' },
-                    { text: 'Node.js', color: 'green', id: 'reactRouter' },
-                    { text: 'JavaScript', color: 'yellow', id: 'javascript' },
-                    { id: 'default', color: 'darkGrey' },
-                ],
+                tags,
             };
 
             this.getTagByTagId = this.getTagByTagId.bind(this);

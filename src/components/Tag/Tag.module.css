@@ -1,5 +1,5 @@
 @value colors: '../../common/styles/colors.css';
-@value nord2, nord4, nord7, nord9, nord13 from colors;
+@value nord2, nord4, nord7, nord9, nord13, nord14 from colors;
 
 .tag {
     font-family: 'Rubik Medium', sans-serif;
@@ -23,8 +23,8 @@
 }
 
 .green {
-    border-color: nord7;
-    color: nord7;
+    border-color: nord14;
+    color: nord14;
 }
 
 .yellow {
